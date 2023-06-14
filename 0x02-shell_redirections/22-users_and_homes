@@ -1,2 +1,2 @@
 #!/bin/bash
-./22*ext
+source 22*ext
