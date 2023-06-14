@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Local Variables:"
+declare -p | grep "declare --"
+echo ""
+echo "Environment Variables:"
+printenv
+echo ""
+echo "Functions:"
+declare -F
