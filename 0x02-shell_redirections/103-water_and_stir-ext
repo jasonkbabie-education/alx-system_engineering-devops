@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Function to convert from a custom base to base 10
+convert_to_base10() {
+    local number=$1
+    local base=$2
+    echo "ibase=$base; $number" | bc
+}
+
+# Function to convert from base 10 to a custom base
+convert_from_base10() {
+    local number=$1
+    local base=$2
+    echo "obase=$base; $number" | bc
+}
+
+# Perform the addition in base 10
+result_base10=$(( $(convert_to_base10 "$WATER" water) + $(convert_to_base10 "$STIR" stir) ))
+
+# Convert the result back to base "bestchol"
+result_bestchol=$(convert_from_base10 "$result_base10" bestchol)
+
+# Print the result
+echo "$result_bestchol"

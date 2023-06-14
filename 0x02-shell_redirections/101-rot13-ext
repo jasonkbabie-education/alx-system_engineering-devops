@@ -1,0 +1,17 @@
+#!/bin/bash
+
+encode_rot13() {
+    echo "$1" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
+
+decode_rot13() {
+    echo "$1" | tr 'N-ZA-Mn-za-m' 'A-Za-z'
+}
+
+text="OpenAI is amazing!"  # Example text to encode and decode
+
+encoded_text=$(encode_rot13 "$text")
+echo "Encoded text: $encoded_text"
+
+decoded_text=$(decode_rot13 "$encoded_text")
+echo "Decoded text: $decoded_text"
